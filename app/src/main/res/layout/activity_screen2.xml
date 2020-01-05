@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Screen2">
+
+    <TextView
+        android:id="@+id/tvCongrats"
+        android:layout_width="match_parent"
+        android:layout_height="195dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="Congrat"
+        android:textSize="75dp" />
+
+    <TextView
+        android:id="@+id/tvScore"
+        android:layout_width="match_parent"
+        android:layout_height="191dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="Score:"
+        android:textSize="75dp" />
+
+    <Button
+        android:id="@+id/btnRetake"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Retake the quiz!"
+        android:textSize="30dp" />
+
+</LinearLayout>

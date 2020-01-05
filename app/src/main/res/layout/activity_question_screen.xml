@@ -7,4 +7,44 @@
     android:orientation="vertical"
     tools:context=".QuestionScreen">
 
+    <TextView
+        android:id="@+id/tvQuestion"
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:text="(Question)"
+        android:textSize="45dp" />
+
+    <TextView
+        android:id="@+id/tvChoiceA"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="30dp"
+        android:clickable="true"
+        android:gravity="center"
+        android:textSize="30dp" />
+
+    <TextView
+        android:id="@+id/tvChoiceB"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="30dp"
+        android:clickable="true"
+        android:gravity="center"
+        android:textSize="30dp" />
+
+    <TextView
+        android:id="@+id/tvChoiceC"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="30dp"
+        android:clickable="true"
+        android:gravity="center"
+        android:textSize="30dp" />
+
+    <TextView
+        android:id="@+id/tvScore"
+        android:layout_width="match_parent"
+        android:layout_height="82dp"
+        android:text="Score:"
+        android:textSize="50dp" />
 </LinearLayout>
