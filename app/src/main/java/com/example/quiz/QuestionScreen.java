@@ -31,7 +31,7 @@ public class QuestionScreen extends AppCompatActivity implements View.OnClickLis
     boolean isCorrectB = false;
     boolean isCorrectC = false;
 
-    int i = 0;
+    int i = 1;
     int sc = 0;
 
 
@@ -62,31 +62,44 @@ public class QuestionScreen extends AppCompatActivity implements View.OnClickLis
                 if (isCorrectA){
                     Toast.makeText(this, "Correct!", Toast.LENGTH_SHORT).show();
                     i++;
+                    System.out.print("i="+i);
                     sc++;
                     score.setText("Score:"+sc);
                     questions();
-                }else Toast.makeText(this, "Wrong!", Toast.LENGTH_SHORT).show(); i++; questions();
+                }else {Toast.makeText(this, "Wrong!", Toast.LENGTH_SHORT).show();
+                    i++;
+                    questions();
+                }
             break;
             case R.id.tvChoiceB:
                 if (isCorrectB){
                     Toast.makeText(this, "Correct!", Toast.LENGTH_SHORT).show();
                     i++;
+                    System.out.println("i="+i);
                     sc++;
                     score.setText("Score:"+sc);
                     questions();
-                }else Toast.makeText(this, "Wrong!", Toast.LENGTH_SHORT).show(); i++; questions();
+                }else {
+                    Toast.makeText(this, "Wrong!", Toast.LENGTH_SHORT).show();
+                    i++; questions();
+                }
             break;
             case R.id.tvChoiceC:
                 if (isCorrectC){
                     Toast.makeText(this, "Correct!", Toast.LENGTH_SHORT).show();
                     i++;
+                    System.out.println("i="+i);
                     sc++;
                     score.setText("Score:"+sc);
                     questions();
-                }else Toast.makeText(this, "Wrong!", Toast.LENGTH_SHORT).show(); i++; questions();
+                }else {Toast.makeText(this, "Wrong!", Toast.LENGTH_SHORT).show();
+                i++;
+                questions();
+                }
             break;
         }
     }
+    int[] d = random();
     public void questions(){
         String[] question1 = {"How many points are on a Maple leaf?","12","11","10","11"};
 
@@ -115,12 +128,13 @@ public class QuestionScreen extends AppCompatActivity implements View.OnClickLis
         list.add(question8);
 
 
-        FQuestion1 = list.get(random(0));
-        FQuestion2 = list.get(random(1));
-        FQuestion3 = list.get(random(2));
-        FQuestion4 = list.get(random(3));
 
-        if(i == 0) {
+        FQuestion1 = list.get(d[0]);
+        FQuestion2 = list.get(d[1]);
+        FQuestion3 = list.get(d[2]);
+        FQuestion4 = list.get(d[3]);
+
+        if(i == 1) {
             question.setText(FQuestion1[0]);
             a.setText(FQuestion1[1]);
             b.setText(FQuestion1[2]);
@@ -132,7 +146,7 @@ public class QuestionScreen extends AppCompatActivity implements View.OnClickLis
                 isCorrectB = true;
             } else isCorrectC = true;
 
-        }else if(i == 1){
+        }else if(i == 2){
             question.setText(FQuestion2[0]);
             a.setText(FQuestion2[1]);
             b.setText(FQuestion2[2]);
@@ -143,7 +157,7 @@ public class QuestionScreen extends AppCompatActivity implements View.OnClickLis
             }else if (FQuestion2[2].equals(FQuestion2[4])){
                 isCorrectB = true;
             }else isCorrectC = true;
-        } else if (i == 2) {
+        } else if (i == 3) {
             question.setText(FQuestion3[0]);
             a.setText(FQuestion3[1]);
             b.setText(FQuestion3[2]);
@@ -154,7 +168,7 @@ public class QuestionScreen extends AppCompatActivity implements View.OnClickLis
             } else if (FQuestion3[2].equals(FQuestion3[4])) {
                 isCorrectB = true;
             } else isCorrectC = true;
-        } else if (i == 3){
+        } else if (i == 4){
             question.setText(FQuestion4[0]);
             a.setText(FQuestion4[1]);
             b.setText(FQuestion4[2]);
@@ -164,14 +178,14 @@ public class QuestionScreen extends AppCompatActivity implements View.OnClickLis
             } else if (FQuestion4[2].equals(FQuestion4[4])){
                 isCorrectB = true;
             }else isCorrectC = true;
-        } else if (i == 4){
+        } else if (i == 5){
             Intent intent = new Intent(QuestionScreen.this,com.example.quiz.Screen2.class);
-            intent.putExtra("SCORE",score.getText().toString());
+            intent.putExtra("SCORE",String.valueOf(sc));
             startActivity(intent);
         }
     }
 
-    public int random(int a){
+    public int[] random(){
         Random random1 = new Random();
         int rand1 = random1.nextInt(4);
 
@@ -205,6 +219,6 @@ public class QuestionScreen extends AppCompatActivity implements View.OnClickLis
         System.out.println(rand4);
 
         int[] randomArray = {rand1,rand2,rand3,rand4};
-        return randomArray[a];
+        return randomArray;
     }
 }

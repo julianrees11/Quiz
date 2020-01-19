@@ -17,12 +17,12 @@ public class Screen2 extends AppCompatActivity {
 
         Intent intentScore = new Intent();
 
-        String getScore = intentScore.getStringExtra("SCORE");
+        String scc = intentScore.getStringExtra("SCORE");
 
         Button retake = findViewById(R.id.btnRetake);
         TextView score = findViewById(R.id.tvScore);
 
-        score.setText(getScore);
+        score.setText("Score="+scc);
 
         retake.setOnClickListener(new View.OnClickListener() {
             @Override
